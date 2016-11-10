@@ -19,12 +19,11 @@
         $this.children(".jc_cover").removeClass("jc_active").removeClass("jc_active_pos");
         $this.children(".jc_cover").unbind("mousemove").unbind("mouseleave");
         $this.children(".jc_acrive").unbind("click");
-        $(this).addClass("jc_active").removeClass("jc_left").removeClass("jc_right");
+        $(this).addClass("jc_active").removeClass("jc_left").removeClass("jc_right").addClass("jc_active_pos");
         zindex();
         reinit();
         $(this).css("z-index","200");
         $(this).css("margin-left","");
-        $(this).addClass("jc_active_pos");
       });
       reinit();
       zindex();
@@ -64,12 +63,11 @@
           yPercent=50-yPercent;
           if(yPercent>0) yPercent=0-yPercent;
           else if(yPercent<0) yPercent=Math.abs(yPercent);
-          $this.children(".jc_active").css("transform","rotateX("+(yPercent*(settings.sensivity/(100-50)))+"deg)"+"rotateY("+(xPercent*(settings.sensivity/(100-50)))+"deg)");
+          $this.children(".jc_active").css("transform","rotateX("+-(yPercent*(settings.sensivity/(100-50)))+"deg)"+"rotateY("+(xPercent*(settings.sensivity/(100-50)))+"deg)");
         });
         $this.children(".jc_active").mouseleave(function() {
           $(".jc_active").css("transform","");
         });
-
         if(settings.clickToFull == "true"){
           $this.children(".jc_active_pos").click(function(){
             if($(this).hasClass("jc_full"))
@@ -80,6 +78,7 @@
         }
       }
       $this.children(".jc_cover").removeClass("jc_full");
+
     }
     function zindex(){
       var after=0;

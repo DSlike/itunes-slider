@@ -1,4 +1,4 @@
-.wrapper{
+.jc_wrapper{
   position: relative;
   width: 100%;
   height: 280px;
@@ -37,12 +37,12 @@
 }
 
 .jc_left{
-  transform: rotateY(60deg); 
+  transform: rotateY(60deg);
   box-shadow: -5px 5px 10px black;
   width: 150px;
   height: 150px;
   top: 50%;
-  left: 30%;
+  left: 50%;
   margin-top: -75px;
 }
 .jc_left:hover{
